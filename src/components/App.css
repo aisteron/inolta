@@ -1,0 +1,38 @@
+body{
+  background-color: #ccc;
+}
+
+#root{
+  width: 800px;
+  margin: 10vh auto;
+  gap: 1rem;
+  min-height: 30vh;
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  padding: 1rem
+}
+.sort{
+  grid-column:1/3;
+  grid-row: 1;
+  background-color: #fff;
+  align-items: center;
+}
+.sort ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0
+}
+.sort ul li {
+  margin-right: 1rem;
+}
+ul.movies{
+  grid-column: 1;
+  grid-row: 2;
+}
+
+#filter{
+  grid-column: 2;
+  grid-row: 2;
+  background-color: #fff;
+}
