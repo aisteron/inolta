@@ -25,14 +25,53 @@ body{
 }
 .sort ul li {
   margin-right: 1rem;
+  padding: 5px
 }
-ul.movies{
+.sort ul li:hover{
+  color: red;
+}
+.sort ul li.asc, .sort ul li.desc{
+  color: red
+}
+.movies{
   grid-column: 1;
   grid-row: 2;
 }
 
+.movies .card{
+  background-color: #fff;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.movies .card h3 {
+  margin-top: 0;
+}
+.movies .card p.date{
+  display: inline;
+  background-color: #eee;
+  padding: 5px;
+  border-radius: 5px;
+  border-bottom: 1px solid #cbcbcb;
+}
 #filter{
   grid-column: 2;
   grid-row: 2;
   background-color: #fff;
+}
+
+.sort ul li.price, .sort ul li.date{
+  position: relative;
+  cursor: pointer;
+}
+.sort ul li.price:after, .sort ul li.date:after{
+  content: "⇵"
+}
+
+.sort ul li.price.asc:after, .sort ul li.date.asc:after{
+  content: "↥"
+}
+
+.sort ul li.price.desc:after, .sort ul li.date.desc:after{
+  content: "↧"
 }

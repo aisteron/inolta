@@ -1,0 +1,26 @@
+#filter{
+  padding: 1rem;
+}
+#filter .price label, #filter .date label{
+  display: block;
+  margin-bottom: 1rem;
+}
+
+#filter .price label span, #filter .date label span{
+  display: inline-block;
+  margin-right: 1rem;
+}
+
+#filter .taxes ul {
+  padding-left: 0;
+  list-style: none;
+}
+
+#filter .taxes ul li {
+  line-height: 150%;
+}
+
+#filter .taxes ul li label input {
+  display: inline-block;
+  margin-right: 1rem;
+}

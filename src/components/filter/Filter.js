@@ -1,14 +1,17 @@
+import { Price } from "./Price"
+import { Date } from "./Date";
+import { Tax } from "./Tax";
+
+import './Filter.css';
+
 export const Filter = () => {
+  
   return(
     <div id="filter">
-      <p>price</p>
-      <p>date</p>
-      <p>tax:</p>
-      <ul>
-        <li>actors</li>
-        <li>countries</li>
-        <li>genres</li>
-      </ul>
+      <Price/>
+      <Date/>
+      <Tax />
+      
     </div>
   )
 }
