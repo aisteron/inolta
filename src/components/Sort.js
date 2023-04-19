@@ -1,5 +1,4 @@
 import { useSelector, useDispatch } from 'react-redux'
-
 import { sorted } from '../store/inoltaSlice'
 
 export const Sort = () =>{

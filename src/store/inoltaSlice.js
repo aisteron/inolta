@@ -1,4 +1,4 @@
-import { createSlice, current } from '@reduxjs/toolkit'
+import { createSlice,current } from '@reduxjs/toolkit'
 
 export const initialState = {
   sort: [],
@@ -33,6 +33,7 @@ export const inoltaSlice = createSlice({
     },
     priced: (state, action) => {
       state.price = action.payload
+      console.log(current(state))
     },
   },
 })
