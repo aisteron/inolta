@@ -1,4 +1,7 @@
-import { useEffect, useState } from "react"
+import { useEffect, useRef, useState } from "react"
+
+import { useDispatch } from 'react-redux'
+import { dated } from '../../store/inoltaSlice'
 
 export const Date = () => {
 
@@ -14,6 +17,22 @@ export const Date = () => {
   },[])
 
   let range = get_range(date)
+
+
+
+  const dispatch = useDispatch()
+  let fromDate = useRef(null)
+  let toDate = useRef(null)
+
+  function setPeriod(){
+    let from = fromDate.current.value.replaceAll("-","")
+    let to = toDate.current.value.replaceAll("-","")
+    if(!from && !to) return dispatch(dated([]))
+
+    dispatch(dated([from,to]))
+
+    
+  }
   
 
 
@@ -21,11 +40,11 @@ export const Date = () => {
     <div className="date">
       <label>
         <span>От</span>
-        <input type="date" value={range && range[0]} min={range && range[0]} max={range && range[1]}/>
+        <input type="date" defaultValue={range && range[0]} min={range && range[0]} max={range && range[1]} ref={fromDate} onChange={()=>setPeriod()}/>
       </label>
       <label>
         <span>До</span>
-        <input type="date" value={range && range[1]} min={range && range[0]} max={range && range[1]}/>
+        <input type="date" defaultValue={range && range[1]} min={range && range[0]} max={range && range[1]} ref={toDate} onChange={()=>setPeriod()}/>
       </label>
     </div>
   )

@@ -18,9 +18,20 @@
 
 #filter .taxes ul li {
   line-height: 150%;
+
+}
+#filter .taxes ul li:hover{
+  color: red
+}
+
+#filter .taxes ul li label {
+  cursor: pointer;
 }
 
 #filter .taxes ul li label input {
   display: inline-block;
   margin-right: 1rem;
+}
+#filter .taxes ul li label input:checked ~ span {
+  color: red
 }

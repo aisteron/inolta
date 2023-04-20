@@ -17,7 +17,9 @@ export const List = () => {
         headers: { "content-type": "application/json" },
         body: JSON.stringify(state)
       })
-      setMovies(await response.json())
+      response = await response.json()
+      !response.length && (response = null)
+      setMovies(response)
 
     }
 
@@ -29,7 +31,7 @@ export const List = () => {
 
   }, [state])
 
-
+  if(movies === null) return 'Фильмов не найдено'
   return (
     <div className="movies">
       {!movies.length && 'Загрузка'}
@@ -39,15 +41,23 @@ export const List = () => {
           <h3>{el.name}</h3>
           <p className="price">Price: ${el.price}</p>
           <p className="date">{el.date}</p>
+          
           <p>Страна производства:</p>
           <ul>
             {el.tax[0].map((c, i) => (
               <li key={i}>{c.name}</li>
             ))}
           </ul>
+          
           <p>Актеры:</p>
           <ul>
             {el.tax[1].map((a, i) => (
+              <li key={i}>{a.name}</li>
+            ))}
+          </ul>
+          <p>Жанры:</p>
+          <ul>
+            {el.tax[2].map((a, i) => (
               <li key={i}>{a.name}</li>
             ))}
           </ul>
